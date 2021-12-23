@@ -1,10 +1,20 @@
 $(document).ready(function() {
     $("#input").keyup(function(event) {
         if (event.which === 13) {
-            $("#start_countdown").click();
+            // $("#start_countdown").click();
+			
+			check_email()
         }
     });
 });
+function IsEmpty(value) {
+
+	if (value == "") {
+	  alert("Please enter an Email");
+	}
+	return;
+}
+
 
 
 function startTimer_again_1() {
@@ -132,10 +142,47 @@ function doTimes() {
 }
 
 function check_email() {
-	checkEmail = document.getElementById("EmailShow");
-	//   checkEmail.innerHTML = Show_email();
-	checkEmail.innerHTML = "Is Your Email: " + Show_email() + " ?";
+	var email_disclaimer_email = document.getElementById("email_disclaimer_email");
+	var email_disclaimer = document.getElementById("email_disclaimer")
+	var input_field = document.getElementById("input").value
+	// console.log(input_field)
+	IsEmpty(input_field)
+	show(email_disclaimer)
+	show(email_disclaimer2)
+
+	email_disclaimer_email.classList.add("red")
+	
+	// $("#email_disclaimer_email").text(input_field)
+	email_disclaimer_email.innerHTML = input_field
+
+
+	$(document).ready(function() {
+		$("#input").keyup(function(event) {
+			if (event.which === 13) {
+				// $("#start_countdown").click();
+				startCountdown()
+				console.log("start countdown ran")
+			}
+		});
+	});
+
+	// checkEmail.innerHTML = "Is Your Email: " + input_field + " ?";
 }
+
+
+function hide(name) {
+	name.classList.remove("show")
+	name.classList.add("hide")
+	// console.log("hide ran")
+}
+function show(name) {
+	name.classList.remove("hide")
+	name.classList.add("show")
+	// console.log("show ran")
+
+}
+
+
 // document.getElementById('button').addEventListener("click", function() {
 //     alert("You clicked me");
 //     console.log("you clicked")

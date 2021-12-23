@@ -9,6 +9,8 @@
     margin: auto;
     width: 30%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
 }
 
 .photoClass {
@@ -30,5 +32,18 @@ img{
     width: 300px;
 }
 input[type="text"]{
-    font-size:24px;
+    font-size: 24px;
+    margin: 10px 0;
+}
+button {
+    display: none;
+}
+.hide {
+    visibility: hidden;
+}
+.show {
+    visibility: visible;
+}
+.red {
+    color: red;
 }
