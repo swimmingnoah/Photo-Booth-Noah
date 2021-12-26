@@ -1,21 +1,18 @@
-$(document).ready(function() {
-    $("#input").keyup(function(event) {
-        if (event.which === 13) {
-            // $("#start_countdown").click();
-			
-			check_email()
-        }
-    });
+$(document).ready(function () {
+	$("#input").keyup(function (event) {
+		if (event.which === 13) {
+			// $("#start_countdown").click();
+
+			check_email();
+		}
+	});
 });
 function IsEmpty(value) {
-
 	if (value == "") {
-	  alert("Please enter an Email");
+		alert("Please enter an Email");
 	}
 	return;
 }
-
-
 
 function startTimer_again_1() {
 	var timeleft = 6;
@@ -29,7 +26,7 @@ function startTimer_again_1() {
 
 			show_item("item2");
 
-			eel.take_photo();
+			// eel.take_photo();
 		} else {
 			document.getElementById("countdown").innerHTML = timeleft;
 		}
@@ -43,7 +40,7 @@ function startTimer_again_2() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 			startTimer_again_3();
-			eel.take_photo();
+			// eel.take_photo();
 			getPhotoWait(2);
 
 			show_item("item3");
@@ -61,15 +58,21 @@ function startTimer_again_3() {
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
 			getPhotoWait(1);
-
+			removeEmailField();
 			show_item("item4");
 			show_item("element");
+			show_item("email_sent");
+			hide_item("email_disclaimer")
+			hide_item("email_disclaimer2")
+			emailSentDismiss();
+			photoHide()
 			hide_item("countdown");
 
-			eel.take_photo();
+			// eel.take_photo();
+
 			movePhotoWait();
 			var filename = "www/Sent Photos/" + getEmail() + "/Final.jpg";
-			sendPhotoWait(filename)
+			sendPhotoWait(filename);
 			console.log(filename);
 		} else {
 			document.getElementById("countdown").innerHTML = timeleft;
@@ -78,7 +81,7 @@ function startTimer_again_3() {
 	}, 1000);
 }
 
-// eel.expose(startTimer);
+
 function startTimer() {
 	var timeleft = 7;
 	var downloadTimer = setInterval(function () {
@@ -86,7 +89,7 @@ function startTimer() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
-			eel.take_photo();
+			// eel.take_photo();
 			getPhotoWait(4);
 			show_item("item1");
 
@@ -106,24 +109,22 @@ function startTimer() {
 // }
 
 function startCountdown() {
-	eel.write_num();
+	// eel.write_num();
 	show_item("countdown");
 	startTimer();
 	getEmail();
 	hide_item("element");
-	eel.init_click();
+	// eel.init_click();
 }
 
-
-
-eel.expose(getEmail);
+// eel.expose(getEmail);
 function getEmail() {
 	var textbox = document.getElementById("input");
 	email = textbox.value;
 	console.log("Js Email: " + email);
 
-	var outputDiv = document.getElementById("result");
-	outputDiv.innerHTML = "Your email: " + email;
+	// var outputDiv = document.getElementById("result");
+	// outputDiv.innerHTML = "Your email: " + email;
 	return email;
 }
 
@@ -142,46 +143,48 @@ function doTimes() {
 }
 
 function check_email() {
-	var email_disclaimer_email = document.getElementById("email_disclaimer_email");
-	var email_disclaimer = document.getElementById("email_disclaimer")
-	var input_field = document.getElementById("input").value
+	var email_disclaimer_email = document.getElementById(
+		"email_disclaimer_email"
+	);
+	var input_field = document.getElementById("input").value;
 	// console.log(input_field)
-	IsEmpty(input_field)
-	show(email_disclaimer)
-	show(email_disclaimer2)
+	IsEmpty(input_field);
+	show_item("email_disclaimer");
+	show_item("email_disclaimer2");
 
-	email_disclaimer_email.classList.add("red")
-	
+	email_disclaimer_email.classList.add("red");
+
 	// $("#email_disclaimer_email").text(input_field)
-	email_disclaimer_email.innerHTML = input_field
+	email_disclaimer_email.innerHTML = input_field;
 
-
-	$(document).ready(function() {
-		$("#input").keyup(function(event) {
+	$(document).ready(function () {
+		$("#input").keyup(function (event) {
 			if (event.which === 13) {
 				// $("#start_countdown").click();
-				startCountdown()
-				console.log("start countdown ran")
+				startCountdown();
+				resetEmail()
+				console.log("start countdown ran");
 			}
 		});
 	});
 
 	// checkEmail.innerHTML = "Is Your Email: " + input_field + " ?";
 }
+function resetEmail() {
+	var email_disclaimer_email = document.getElementById(
+		"email_disclaimer_email"
+	);
+	var input_field = document.getElementById("input").value;
+	// console.log(input_field)
+	IsEmpty(input_field);
+	show_item("email_disclaimer");
+	show_item("email_disclaimer2");
 
+	email_disclaimer_email.classList.remove("red");
 
-function hide(name) {
-	name.classList.remove("show")
-	name.classList.add("hide")
-	// console.log("hide ran")
+	// $("#email_disclaimer_email").text(input_field)
+	email_disclaimer_email.innerHTML = "Please Enter email and then press ENTER";
 }
-function show(name) {
-	name.classList.remove("hide")
-	name.classList.add("show")
-	// console.log("show ran")
-
-}
-
 
 // document.getElementById('button').addEventListener("click", function() {
 //     alert("You clicked me");
@@ -204,4 +207,3 @@ function show(name) {
 // 	var outputTarget = document.getElementById("item4");
 // 	outputTarget.src = "Photos/IMG_000" + number + ".jpg";
 // }
-

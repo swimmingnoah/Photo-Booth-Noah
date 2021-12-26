@@ -10,7 +10,7 @@
     width: 30%;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
 }
 
 .photoClass {

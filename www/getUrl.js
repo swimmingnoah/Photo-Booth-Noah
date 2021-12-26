@@ -45,6 +45,25 @@ async function sendPhotoWait(filename) {
 	eel.email_send_attachment(filename, getEmail());
 }
 
+async function emailSentDismiss(){
+	await delay(6000)
+	hide_item("email_sent")
+}
+
+async function photoHide() {  
+	await delay(6000)
+	hide_item("item4")
+	hide_item("item3")
+	hide_item("item2")
+	hide_item("item1")
+}
+
+
+function removeEmailField() {
+	var input = document.getElementById("input")
+	input.value = ""
+}
+
 
 // $(document).ready(function() {
 //   $.ajax({
