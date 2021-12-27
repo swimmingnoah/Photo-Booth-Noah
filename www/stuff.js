@@ -26,7 +26,7 @@ function startTimer_again_1() {
 
 			show_item("item2");
 
-			// eel.take_photo();
+			eel.take_photo();
 		} else {
 			document.getElementById("countdown").innerHTML = timeleft;
 		}
@@ -40,7 +40,7 @@ function startTimer_again_2() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 			startTimer_again_3();
-			// eel.take_photo();
+			eel.take_photo();
 			getPhotoWait(2);
 
 			show_item("item3");
@@ -68,7 +68,7 @@ function startTimer_again_3() {
 			photoHide()
 			hide_item("countdown");
 
-			// eel.take_photo();
+			eel.take_photo();
 
 			movePhotoWait();
 			var filename = "www/Sent Photos/" + getEmail() + "/Final.jpg";
@@ -89,7 +89,7 @@ function startTimer() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
-			// eel.take_photo();
+			eel.take_photo();
 			getPhotoWait(4);
 			show_item("item1");
 
@@ -109,15 +109,15 @@ function startTimer() {
 // }
 
 function startCountdown() {
-	// eel.write_num();
+	eel.write_num();
 	show_item("countdown");
 	startTimer();
 	getEmail();
 	hide_item("element");
-	// eel.init_click();
+	eel.init_click();
 }
 
-// eel.expose(getEmail);
+eel.expose(getEmail);
 function getEmail() {
 	var textbox = document.getElementById("input");
 	email = textbox.value;

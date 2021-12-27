@@ -73,7 +73,8 @@ def init_click():
 	
 	# print('The current pointer position is {0}'.format(mouse.position))
 	
-	mouse.position = (346.20318603515625, 157.62562561035156)
+	mouse.position = (44, 75)
+	# mouse.position = (346.20318603515625, 157.62562561035156)
 	# print('Now we have moved it to {0}'.format(mouse.position))
 	# Press and release
 	mouse.press(Button.left)
@@ -90,7 +91,8 @@ def take_photo():
 	#     mouse.position))
 	# time.sleep(1)
 	# Set pointer position
-	mouse.position = (306.8240051269531, 203.43341064453125)
+	mouse.position = (98, 65)
+	# mouse.position = (306.8240051269531, 203.43341064453125)
 
 	# Press and release
 	mouse.press(Button.left)

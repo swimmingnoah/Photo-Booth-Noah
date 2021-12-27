@@ -41,4 +41,23 @@ def email_send_attachment(Filename, email):
 	s.sendmail(fromaddr, ToAddrs, text)
 	s.quit()
 
-email_send_attachment("/Users/noahnemec/Desktop/Photo Booth/www/hanah bigger.jpg", "gradyandhannahmcknight@gmail.com")
+# email_send_attachment("/Users/noahnemec/Desktop/Photo Booth/www/hanah bigger.jpg", "gradyandhannahmcknight@gmail.com")
+
+
+def take_photo():
+	mouse = Controller()
+	# print("take photo ran")
+	
+	# Read pointer position
+	time.sleep(3)
+
+	print('The current pointer position is {0}'.format(
+	    mouse.position))
+	# Set pointer position
+	# mouse.position = (98, 65)
+
+	# Press and release
+	mouse.press(Button.left)
+	mouse.release(Button.left)
+	# write_num()
+take_photo()
