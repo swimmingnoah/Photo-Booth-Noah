@@ -64,7 +64,19 @@ def write_num():
 
 # write_num()
 
-
+@eel.expose
+def email_click():
+	mouse = Controller()
+	print("email clicl ran")
+	
+	# print('The current pointer position is {0}'.format(mouse.position))
+	
+	mouse.position = (44, 75)
+	# mouse.position = (346.20318603515625, 157.62562561035156)
+	# print('Now we have moved it to {0}'.format(mouse.position))
+	# Press and release
+	mouse.press(Button.left)
+	mouse.release(Button.left)
 
 
 @eel.expose
@@ -175,7 +187,7 @@ def move_files(email_addr):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
 def photo_collection(email_addr):
-	template = Image.open('www/hanah bigger.jpg')
+	template = Image.open('www/hanah bigger.jpg').convert('RGB')
 	img_num1,img_num2,img_num3,img_num4 = find_img(email_addr)
 
 	# print(img_num1)

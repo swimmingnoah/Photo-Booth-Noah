@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	eel.email_click()
 	$("#input").keyup(function (event) {
 		if (event.which === 13) {
 			// $("#start_countdown").click();
