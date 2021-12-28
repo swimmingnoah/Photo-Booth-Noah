@@ -58,19 +58,10 @@ function startTimer_again_3() {
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
 			getPhotoWait(1);
-			removeEmailField();
-			show_item("item4");
-			show_item("element");
-			show_item("email_sent");
-			hide_item("email_disclaimer")
-			hide_item("email_disclaimer2")
-			emailSentDismiss();
-			photoHide()
-			hide_item("countdown");
 
 			eel.take_photo();
-
 			movePhotoWait();
+			photosTaken();
 			var filename = "www/Sent Photos/" + getEmail() + "/Final.jpg";
 			sendPhotoWait(filename);
 			console.log(filename);
@@ -80,7 +71,6 @@ function startTimer_again_3() {
 		timeleft -= 1;
 	}, 1000);
 }
-
 
 function startTimer() {
 	var timeleft = 7;
@@ -101,6 +91,26 @@ function startTimer() {
 	}, 1000);
 }
 
+function photosTaken() {
+
+	show_item("item4");
+	show_item("emailContainer");
+	show_item("email_sent");
+	show_item("EmailShow");
+	hide_item("email_disclaimer");
+	hide_item("email_disclaimer2");
+	hide_item("email_disclaimer_email");
+	hide_item("input");
+	hide_item("enter_email");
+
+	emailSentDismiss();
+	photoHide();
+	hide_item("countdown");
+	// resetEmail();
+
+	
+}
+
 // outputs the content of the text file
 // eel.expose(showEmail);
 // function showEmail(answer) {
@@ -111,10 +121,10 @@ function startTimer() {
 function startCountdown() {
 	eel.write_num();
 	show_item("countdown");
-	startTimer();
 	getEmail();
-	hide_item("element");
+	hide_item("emailContainer");
 	eel.init_click();
+	startTimer();
 }
 
 eel.expose(getEmail);
@@ -138,9 +148,6 @@ function show_item(element) {
 	element.classList.add("show");
 }
 
-function doTimes() {
-	console.log("ran");
-}
 
 function check_email() {
 	var email_disclaimer_email = document.getElementById(
@@ -162,48 +169,32 @@ function check_email() {
 			if (event.which === 13) {
 				// $("#start_countdown").click();
 				startCountdown();
-				resetEmail()
 				console.log("start countdown ran");
 			}
 		});
 	});
 
-	// checkEmail.innerHTML = "Is Your Email: " + input_field + " ?";
 }
-function resetEmail() {
-	var email_disclaimer_email = document.getElementById(
-		"email_disclaimer_email"
-	);
-	var input_field = document.getElementById("input").value;
-	// console.log(input_field)
-	IsEmpty(input_field);
-	show_item("email_disclaimer");
-	show_item("email_disclaimer2");
+// function resetEmail() {
+// 	var email_disclaimer_email = document.getElementById(
+// 		"email_disclaimer_email"
+// 	);
+// 	var input_field = document.getElementById("input").value;
+// 	// console.log(input_field)
+// 	IsEmpty(input_field);
+// 	show_item("email_disclaimer");
+// 	show_item("email_disclaimer2");
 
-	email_disclaimer_email.classList.remove("red");
+// 	email_disclaimer_email.classList.remove("red");
 
-	// $("#email_disclaimer_email").text(input_field)
-	email_disclaimer_email.innerHTML = "Please Enter email and then press ENTER";
-}
+// 	// $("#email_disclaimer_email").text(input_field)
+// 	email_disclaimer_email.innerHTML = "Please Enter email and then press ENTER";
+// }
 
-// document.getElementById('button').addEventListener("click", function() {
-//     alert("You clicked me");
-//     console.log("you clicked")
-// }​);​
 
-// function changePhoto1(number) {
-// 	var outputTarget = document.getElementById("item1");
-// 	outputTarget.src = "Photos/IMG_000" + number + ".jpg";
+
+// function removeEmailField() {
+// 	var input = document.getElementById("input")
+// 	input.value = ""
 // }
-// function changePhoto2(number) {
-// 	var outputTarget = document.getElementById("item2");
-// 	outputTarget.src = "Photos/IMG_000" + number + ".jpg";
-// }
-// function changePhoto3(number) {
-// 	var outputTarget = document.getElementById("item3");
-// 	outputTarget.src = "Photos/IMG_000" + number + ".jpg";
-// }
-// function changePhoto4(number) {
-// 	var outputTarget = document.getElementById("item4");
-// 	outputTarget.src = "Photos/IMG_000" + number + ".jpg";
-// }
+

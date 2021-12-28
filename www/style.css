@@ -5,10 +5,10 @@
     display: show;
 }
 .content{ 
-
     margin: auto;
-    width: 30%;
+    /* width: 30%; */
     text-align: center;
+    justify-content: space-between;
     display: flex;
     /* flex-direction: row; */
 }
@@ -16,8 +16,8 @@
 .photoClass {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* width: 20%; */
+    width: 20%;
+
 }
 /* .item {
     flex: 1 0 25%;
@@ -27,6 +27,10 @@ img{
 }
 #countdown {
     font-size: 200px;
+    text-align: center;
+    padding-left: 100px;
+    width: 60%;
+    margin: 0 auto;
 }
 #input{
     width: 300px;
@@ -46,4 +50,12 @@ button {
 }
 .red {
     color: red;
+}
+body {
+    background-color: rgb(91%, 86%, 86%);
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.info-enter {
+    width: 60%;
 }

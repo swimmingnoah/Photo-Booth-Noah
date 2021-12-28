@@ -48,6 +48,7 @@ async function sendPhotoWait(filename) {
 async function emailSentDismiss(){
 	await delay(6000)
 	hide_item("email_sent")
+	location.reload();
 }
 
 async function photoHide() {  
@@ -59,10 +60,7 @@ async function photoHide() {
 }
 
 
-function removeEmailField() {
-	var input = document.getElementById("input")
-	input.value = ""
-}
+
 
 
 // $(document).ready(function() {

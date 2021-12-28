@@ -159,13 +159,13 @@ def new_dir(email_addr):
 def move_files(email_addr):
 
 	Path(f"www/Photos/IMG_{file_read(-1).strip()}.jpg").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-1).strip()}.jpg")
-	Path(f"www/Photos/IMG_{file_read(-1).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-1).strip()}.rw2")
+	# Path(f"www/Photos/IMG_{file_read(-1).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-1).strip()}.rw2")
 	Path(f"www/Photos/IMG_{file_read(-2).strip()}.jpg").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-2).strip()}.jpg")
-	Path(f"www/Photos/IMG_{file_read(-2).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-2).strip()}.rw2")
+	# Path(f"www/Photos/IMG_{file_read(-2).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-2).strip()}.rw2")
 	Path(f"www/Photos/IMG_{file_read(-3).strip()}.jpg").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-3).strip()}.jpg")
-	Path(f"www/Photos/IMG_{file_read(-3).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-3).strip()}.rw2")
+	# Path(f"www/Photos/IMG_{file_read(-3).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-3).strip()}.rw2")
 	Path(f"www/Photos/IMG_{file_read(-4).strip()}.jpg").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-4).strip()}.jpg")
-	Path(f"www/Photos/IMG_{file_read(-4).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-4).strip()}.rw2")
+	# Path(f"www/Photos/IMG_{file_read(-4).strip()}.rw2").rename(f"www/Sent Photos/{email_addr}/IMG_{file_read(-4).strip()}.rw2")
 	photo_collection(email_addr)
 
 # move_files()
