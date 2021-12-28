@@ -2,3 +2,4 @@ Passwords.py
 /www/Photos/*
 /www/Sent Photos
 __pycache__
+**/.DS_Store
