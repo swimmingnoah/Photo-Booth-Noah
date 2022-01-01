@@ -1,18 +1,78 @@
+var executed = false
+
 $(document).ready(function () {
-	eel.email_click()
+	// eel.email_click()
 	$("#input").keyup(function (event) {
 		if (event.which === 13) {
-			// $("#start_countdown").click();
-
-			check_email();
+			var input_field = document.getElementById("input").value;
+			executed = true
+			IsEmpty(input_field);
 		}
 	});
+	
 });
 function IsEmpty(value) {
 	if (value == "") {
 		alert("Please enter an Email");
+	} else {
+		emailSameCheck()
 	}
 	return;
+}
+function emailSameCheck() {
+	var input = document.getElementById("input").value;
+	var first_email = document.getElementById(
+		"email_disclaimer_email"
+	).innerHTML;
+	if (input === first_email) {
+		console.log("they are the same");
+	} else {
+		console.log("not the same");
+	}
+}
+
+function move_email() {
+	var email_disclaimer_email = document.getElementById(
+		"email_disclaimer_email"
+	);
+	var input_field = document.getElementById("input").value;
+	email_disclaimer_email.innerHTML = input_field;
+	email_disclaimer_email.classList.add("red");
+	show_item("email_disclaimer");
+	show_item("email_disclaimer2");
+}
+
+
+function check_email() {
+	// if (input != first_email) {
+	// 	console.log("not the same");
+	// } else {
+	// 	console.log("they are the same");
+	// }
+
+	// console.log(input_field)
+
+	// $("#email_disclaimer_email").text(input_field)
+
+
+	$("#input").keyup(function (event) {
+		if (event.which === 13) {
+			var input = document.getElementById("input").value;
+			var first_email = document.getElementById(
+				"email_disclaimer_email"
+			).innerHTML;
+			// $("#start_countdown").click();
+			// console.log(input)
+			// console.log(first_email)
+			// startCountdown();
+			// console.log("start countdown ran");
+
+		}
+	});
+
+	$(document).ready(function () {
+		
+	});
 }
 
 function startTimer_again_1() {
@@ -27,7 +87,7 @@ function startTimer_again_1() {
 
 			show_item("item2");
 
-			eel.take_photo();
+			// eel.take_photo();
 		} else {
 			document.getElementById("countdown").innerHTML = timeleft;
 		}
@@ -41,7 +101,7 @@ function startTimer_again_2() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 			startTimer_again_3();
-			eel.take_photo();
+			// eel.take_photo();
 			getPhotoWait(2);
 
 			show_item("item3");
@@ -60,7 +120,7 @@ function startTimer_again_3() {
 
 			getPhotoWait(1);
 
-			eel.take_photo();
+			// eel.take_photo();
 			movePhotoWait();
 			photosTaken();
 			var filename = "www/Sent Photos/" + getEmail() + "/Final.jpg";
@@ -80,7 +140,7 @@ function startTimer() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
-			eel.take_photo();
+			// eel.take_photo();
 			getPhotoWait(4);
 			show_item("item1");
 
@@ -93,7 +153,6 @@ function startTimer() {
 }
 
 function photosTaken() {
-
 	show_item("item4");
 	show_item("emailContainer");
 	show_item("email_sent");
@@ -108,8 +167,6 @@ function photosTaken() {
 	photoHide();
 	hide_item("countdown");
 	// resetEmail();
-
-	
 }
 
 // outputs the content of the text file
@@ -120,15 +177,15 @@ function photosTaken() {
 // }
 
 function startCountdown() {
-	eel.write_num();
+	// eel.write_num();
 	show_item("countdown");
 	getEmail();
 	hide_item("emailContainer");
-	eel.init_click();
+	// eel.init_click();
 	startTimer();
 }
 
-eel.expose(getEmail);
+// eel.expose(getEmail);
 function getEmail() {
 	var textbox = document.getElementById("input");
 	email = textbox.value;
@@ -149,33 +206,6 @@ function show_item(element) {
 	element.classList.add("show");
 }
 
-
-function check_email() {
-	var email_disclaimer_email = document.getElementById(
-		"email_disclaimer_email"
-	);
-	var input_field = document.getElementById("input").value;
-	// console.log(input_field)
-	IsEmpty(input_field);
-	show_item("email_disclaimer");
-	show_item("email_disclaimer2");
-
-	email_disclaimer_email.classList.add("red");
-
-	// $("#email_disclaimer_email").text(input_field)
-	email_disclaimer_email.innerHTML = input_field;
-
-	$(document).ready(function () {
-		$("#input").keyup(function (event) {
-			if (event.which === 13) {
-				// $("#start_countdown").click();
-				startCountdown();
-				console.log("start countdown ran");
-			}
-		});
-	});
-
-}
 // function resetEmail() {
 // 	var email_disclaimer_email = document.getElementById(
 // 		"email_disclaimer_email"
@@ -192,10 +222,7 @@ function check_email() {
 // 	email_disclaimer_email.innerHTML = "Please Enter email and then press ENTER";
 // }
 
-
-
 // function removeEmailField() {
 // 	var input = document.getElementById("input")
 // 	input.value = ""
 // }
-

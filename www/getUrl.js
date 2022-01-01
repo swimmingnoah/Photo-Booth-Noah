@@ -36,13 +36,13 @@ async function getPhotoWait(number) {
 async function movePhotoWait() {
 	await delay(3000);
 	
-	eel.runApp(getEmail())
+	// eel.runApp(getEmail())
 
 
 }
 async function sendPhotoWait(filename) {
 	await delay(3000)
-	eel.email_send_attachment(filename, getEmail());
+	// eel.email_send_attachment(filename, getEmail());
 }
 
 async function emailSentDismiss(){
