@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	// eel.email_click()
+	eel.email_click()
 	$("#input").keyup(function (event) {
 		if (event.which === 13) {
 			// $("#start_countdown").click();
@@ -27,7 +27,7 @@ function startTimer_again_1() {
 
 			show_item("item2");
 
-			// eel.take_photo();
+			eel.take_photo();
 		} else {
 			document.getElementById("countdown").innerHTML = timeleft;
 		}
@@ -41,7 +41,7 @@ function startTimer_again_2() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 			startTimer_again_3();
-			// eel.take_photo();
+			eel.take_photo();
 			getPhotoWait(2);
 
 			show_item("item3");
@@ -60,7 +60,7 @@ function startTimer_again_3() {
 
 			getPhotoWait(1);
 
-			// eel.take_photo();
+			eel.take_photo();
 			movePhotoWait();
 			photosTaken();
 			var filename = "www/Sent Photos/" + getEmail() + "/Final.jpg";
@@ -80,7 +80,7 @@ function startTimer() {
 			clearInterval(downloadTimer);
 			document.getElementById("countdown").innerHTML = "Cheese!!";
 
-			// eel.take_photo();
+			eel.take_photo();
 			getPhotoWait(4);
 			show_item("item1");
 
@@ -113,24 +113,24 @@ function photosTaken() {
 }
 
 // outputs the content of the text file
-// // eel.expose(showEmail);
+// eel.expose(showEmail);
 // function showEmail(answer) {
 // 	var outputDiv = document.getElementById("result");
 // 	outputDiv.innerHTML = "Your email: " + answer;
 // }
 
 function startCountdown() {
-	// // eel.write_num();
+	// eel.write_num();
 	show_item("countdown");
 	getEmail();
 	hide_item("emailContainer");
 	hide_item("email_disclaimer");
 	hide_item("email_disclaimer2");
-	// eel.init_click();
+	eel.init_click();
 	startTimer();
 }
 
-// eel.expose(getEmail);
+eel.expose(getEmail);
 function getEmail() {
 	var textbox = document.getElementById("input");
 	email = textbox.value;
