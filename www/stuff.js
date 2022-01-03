@@ -98,6 +98,7 @@ function photosTaken() {
 	// show_item("emailContainer");
 	show_item("finishedContainer");
 	show_item("EmailShow");
+	hide_item("countdown");
 	// hide_item("email_disclaimer");
 	// hide_item("email_disclaimer2");
 	// hide_item("email_disclaimer_email");
@@ -106,7 +107,6 @@ function photosTaken() {
 
 	emailSentDismiss();
 	photoHide();
-	hide_item("countdown");
 	// resetEmail();
 
 	
