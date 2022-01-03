@@ -6,8 +6,8 @@
 }
 .content{ 
     margin: auto;
-    /* width: 30%; */
-    text-align: center;
+
+    /* text-align: center; */
     justify-content: space-between;
     display: flex;
     /* flex-direction: row; */
@@ -30,7 +30,7 @@ img{
     font-size: 200px;
     text-align: center;
     padding-left: 100px;
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 #input{
