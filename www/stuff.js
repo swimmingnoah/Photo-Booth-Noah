@@ -120,7 +120,7 @@ function photosTaken() {
 // }
 
 function startCountdown() {
-	// eel.write_num();
+	eel.write_num();
 	show_item("countdown");
 	getEmail();
 	hide_item("emailContainer");
