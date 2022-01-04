@@ -45,54 +45,54 @@ import io
 # # email_send_attachment("/Users/noahnemec/Desktop/Photo Booth/www/hanah bigger.jpg", "gradyandhannahmcknight@gmail.com")
 
 
-# def take_photo():
-# 	mouse = Controller()
-# 	# print("take photo ran")
+def take_photo():
+	mouse = Controller()
+	# print("take photo ran")
 	
-# 	# Read pointer position
-# 	time.sleep(3)
+	# Read pointer position
+	time.sleep(3)
 
-# 	print('The current pointer position is {0}'.format(
-# 	    mouse.position))
-# 	# Set pointer position
-# 	# mouse.position = (98, 65)
+	print('The current pointer position is {0}'.format(
+	    mouse.position))
+	# Set pointer position
+	# mouse.position = (98, 65)
 
-# 	# Press and release
-# 	mouse.press(Button.left)
-# 	mouse.release(Button.left)
-# 	# write_num()
-# take_photo()
+	# Press and release
+	mouse.press(Button.left)
+	mouse.release(Button.left)
+	# write_num()
+take_photo()
 
-emailAdress = "testing"
+# emailAdress = "testing"
 
-def photo_collection(email_addr):
-	template = Image.open('www/hanah bigger.jpg').convert('RGB')
-	img_num1,img_num2,img_num3,img_num4 = "/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0101.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0102.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0103.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0104.jpg",
+# def photo_collection(email_addr):
+# 	template = Image.open('www/hanah bigger.jpg').convert('RGB')
+# 	img_num1,img_num2,img_num3,img_num4 = "/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0101.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0102.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0103.jpg","/Users/noahnemec/Desktop/Photo Booth/www/Photos/IMG_0104.jpg",
 
-	# print(img_num1)
-	img1 = Image.open(img_num1)
-	img2 = Image.open(img_num2)
-	img3 = Image.open(img_num3)
-	img4 = Image.open(img_num4)
-
-
-	img1_new = img1.resize((1080,720))
-	img2_new = img2.resize((1080,720))
-	img3_new = img3.resize((1080,720))
-	img4_new = img4.resize((1080,720))
-
-	# img1_new.save("test.jpg", quality=100)
+# 	# print(img_num1)
+# 	img1 = Image.open(img_num1)
+# 	img2 = Image.open(img_num2)
+# 	img3 = Image.open(img_num3)
+# 	img4 = Image.open(img_num4)
 
 
-	back_im = template.copy()
-	back_im.paste(img4_new, (55,51))
-	back_im.paste(img3_new, (55,810))
-	back_im.paste(img2_new, (55,1569))
-	back_im.paste(img1_new, (55,2331))
+# 	img1_new = img1.resize((1080,720))
+# 	img2_new = img2.resize((1080,720))
+# 	img3_new = img3.resize((1080,720))
+# 	img4_new = img4.resize((1080,720))
 
-	# img1_new.save("www/Sent Photos/testing/final2.jpg")
-
-	back_im.save(f"www/Sent Photos/{email_addr}/Final8.jpg", quality=95)
+# 	# img1_new.save("test.jpg", quality=100)
 
 
-photo_collection(emailAdress)
+# 	back_im = template.copy()
+# 	back_im.paste(img4_new, (55,51))
+# 	back_im.paste(img3_new, (55,810))
+# 	back_im.paste(img2_new, (55,1569))
+# 	back_im.paste(img1_new, (55,2331))
+
+# 	# img1_new.save("www/Sent Photos/testing/final2.jpg")
+
+# 	back_im.save(f"www/Sent Photos/{email_addr}/Final8.jpg", quality=95)
+
+
+# photo_collection(emailAdress)
