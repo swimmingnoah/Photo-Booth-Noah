@@ -98,6 +98,7 @@ function photosTaken() {
 	// show_item("emailContainer");
 	show_item("finishedContainer");
 	show_item("EmailShow");
+	show_item("email_sent");
 	hide_item("countdown");
 	// hide_item("email_disclaimer");
 	// hide_item("email_disclaimer2");
@@ -143,6 +144,7 @@ function getEmail() {
 
 function hide_item(element) {
 	var element = document.getElementById(element);
+	element.classList.remove("show");
 	element.classList.add("hide");
 }
 function show_item(element) {
