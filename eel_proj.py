@@ -71,7 +71,7 @@ def email_click():
 	
 	# print('The current pointer position is {0}'.format(mouse.position))
 	
-	mouse.position = (44, 75)
+	mouse.position = (426, 337)
 	# mouse.position = (346.20318603515625, 157.62562561035156)
 	# print('Now we have moved it to {0}'.format(mouse.position))
 	# Press and release
