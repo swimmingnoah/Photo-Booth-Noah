@@ -98,7 +98,7 @@ function photosTaken() {
 	// show_item("emailContainer");
 	show_item("finishedContainer");
 	show_item("EmailShow");
-	show_item("email_sent");
+	show_item("finishedContainer");
 	hide_item("countdown");
 	// hide_item("email_disclaimer");
 	// hide_item("email_disclaimer2");
