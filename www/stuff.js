@@ -16,7 +16,7 @@ function IsEmpty(value) {
 }
 
 function startTimer_again_1() {
-	var timeleft = 6;
+	var timeleft = 5;
 	var downloadTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(downloadTimer);
@@ -35,7 +35,7 @@ function startTimer_again_1() {
 	}, 1000);
 }
 function startTimer_again_2() {
-	var timeleft = 6;
+	var timeleft = 5;
 	var downloadTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(downloadTimer);
@@ -52,7 +52,7 @@ function startTimer_again_2() {
 	}, 1000);
 }
 function startTimer_again_3() {
-	var timeleft = 6;
+	var timeleft = 5;
 	var downloadTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(downloadTimer);
@@ -74,7 +74,7 @@ function startTimer_again_3() {
 }
 
 function startTimer() {
-	var timeleft = 7;
+	var timeleft = 6;
 	var downloadTimer = setInterval(function () {
 		if (timeleft <= 0) {
 			clearInterval(downloadTimer);
